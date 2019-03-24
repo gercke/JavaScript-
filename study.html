@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+    <!--
+    <input id="txt" type="text">
+    <button onclick="demo()">按钮</button>
+   <script>
+       //1,2var i=1;
+       /*1
+       if (i<=5){
+           document.write("i like i<=10");
+       }
+       else if (i>10) {
+           document.write("why i>10");
+       }
+       else{
+           document.write("l啦啦啦啦");
+       }*/
+      /*2
+       switch (i) {
+           case 1:document.write("i=1");
+               break;
+           case 2:document.write("i=2");
+               break;
+           default :
+               document.write("条件不满足case");
+               break;
+       }*/
+     /*3
+      var i=2;
+      var j;
+      do {
+          document.write("i=" + i + "<br/>");
+          i++;
+      }while (i<10){
+      }*/
+     /*4
+       function demo() {
+         var a = 10;
+         var b = 20;
+         var sum = a + b;
+         alert(sum);
+       }
+         demo();*/
+     /*5
+       function demo(a,b) {
+         var sum=a+b;
+         alert(sum);
+       }
+      demo(10,20);
+      */
+     function demo() {
+         try {
+             var e = document.getElementById("txt").value;
+             if (e==""){
+                 throw "请输入";
+             }
+         }catch (err) {
+             alert(err);
+         }
+     }
+   </script>
+   -->
+    <!--事件-->
+    <!--<div id="div">
+        <button id="btn">按钮</button>
+        <a href="http://www.hao123.com" id="aid">123</a>
+    </div>
+    <script>
+        function demo() {
+            alert("hello,html事件处理");
+        }
+    </script>
+    -->
+    <!--<script>
+        var btn = document.getElementById("btn");
+        btn.onclick = function () {alert("hello DOM0级事件处理程序1");}//dom0级被覆盖掉了
+        btn.onclick = function () {alert("hello DOM0级事件处理程序2");}
+        //btn.onclick = null;
+    </script>
+    -->
+    <!--<script>
+        var btn =document.getElementById("btn");
+        btn = addEventListener("click",demo1);//dom2级不覆盖，依次执行
+        btn = addEventListener("click",demo2);
+        function demo1() {
+            alert("DOM2级事件处理程序1");
+        }
+        function demo2() {
+            alert("DOM2级事件处理程序2");
+        }
+        btn.removeEventListener("click",demo2);//移除时
+    </script>
+    -->
+    <!--<script>
+        var btn = document.getElementById("btn");
+        if (btn.addEventListener){
+            btn.addEventListener("click",demo);
+        }else if (btn.attachEvent){
+            btn.attachEvent("onclick",demo);
+        } else{
+            btn.onclick = demo;
+        }
+        function demo() {
+            alert("hello");
+        }
+    </script>
+    -->
+    <!--
+    <script>
+        document.getElementById("btn").addEventListener("click",showtype);//mouseover 划过
+        document.getElementById("div").addEventListener("click",showdiv);
+        document.getElementById("aid").addEventListener("click",showaid);
+        function showtype(event) {
+            //alert(event.type);//获取事件类型
+            alert(event.target);
+            event.stopPropagation();//阻止事件冒泡
+        }
+        function showdiv() {
+            alert("div");
+        }
+        function showaid(event) {
+          //  event.stopPropagation();阻止冒泡无div
+            event.preventDefault();//阻止默认事件执行,不阻止会跳转
+        }
+    </script>
+    -->
+    <!--创建对象-->
+   <!--
+    <script>
+       /*people = new Object();
+        people.name = "jack";
+        people.age = "18";
+        document.write("name: "+ people.name+",age:"+people.age);*/
+        /*people = {name:"jack",age:"30"};
+        document.write("name:" + people.name + ",age:" + people.age);*/
+        /*function people(name,age) {
+            this._name = name;
+            this._age = age;
+        }
+        son = new people("jack",18);
+        document.write("name:"+ son._name +",age:" + son._age);*/
+        /*var str = "hello world";
+       // document.write("字符串长度为："+str.length);
+        //document.write(str.indexOf("hello"));
+         //document.write(str.match("world"));//判断字符串是否存在
+          //document.write(str.replace("world","hello"));//替换字符串
+           document.write(str.toUpperCase());//转换为大写*/
+        //时间日期对象
+        /*var date = new Date();
+        //document.write(date);//打印具体时间
+         //document.write(date.getFullYear());//获取年
+          //document.write(date.getTime());//获取毫秒
+        date.setFullYear(2010,1,1);//自己设定年月日
+        document.write(date);*/
+        //时钟
+       /* function stattime() {
+            var today =new Date();
+            var h =today.getHours();
+            var m =today.getMinutes();
+            var s =today.getSeconds();
+            m =check(m);
+            s =check(s);
+            document.getElementById("timetxt").innerHTML = h+":"+m+":"+s;//加个div，id为timetxt
+            t = setTimeout(function () {
+                stattime();
+            },1000);
+        }
+        function check(i) {
+            if(i<10){
+                i ="0"+i;
+            }
+            return i;
+        }*/
+       //数组
+       /*var a=["hello","world"];
+       var b=["lalala","emmm"];
+       var c=[a.concat(b)];//合并数组
+       document.write(c);*/
+       /*
+       var a=["1","4","3","5","2"];
+       //document.write(a.sort());//升序排列
+        document.write(a.sort(function (a,b) {
+            return b-a;//降序排列
+        }))*/
+        /*
+        var a =["a","b","c"];
+        document.write(a.push("d"));//追加
+        document.write(a.reverse());//翻转
+        document.write(Math.round(2.5));//四舍五入
+        document.write(Math.max(1,2,90,43));//最大值
+        document.write(Math.abs(-10));//绝对值
+        */
+    </script>
+    -->
+    <!--
+    <p name="pn">hello</p>
+    <p name="pn">hello</p>
+    <p name="pn">hello</p>
+    <p name="pn">hello</p>
+    <a id="aid"title="a标签的属性">hello1</a>
+    <a id="aid2">aid2</a>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <div id="div">
+        <p>div的p元素</p>
+    </div>
+     <script>
+         function getname(){
+             //var count = document.getElementsByTagName("p");//具体元素
+             var count = document.getElementsByName("pn");//名字
+             alert(count.length);
+             var p = count[0];
+             p.innerHTML = "world";//修改元素
+         }
+         //getname();//调用函数
+         function getatt() {
+             var anode = document.getElementById("aid");
+             var att = anode.getAttribute("title");//得到元素的属性
+             alert(att);
+         }
+         //getatt();
+         function setatt() {
+             var anode = document.getElementById("aid2");
+             anode.setAttribute("title","动态设置a的属性");//设置元素属性
+             var att = anode.getAttribute("title");
+             alert(att);
+         }
+         //setatt();
+         function getChildnode() {
+             var childnode = document.getElementsByTagName("ul")[0].childNodes;//子节点
+             alert(childnode.length);
+             alert(childnode[0].nodeType);//结点类型
+         }
+         //getChildnode();
+         function getParentnode() {
+             var div = document.getElementById("pid");
+             alert(div.parentNode.nodeName);
+         }//获取父节点
+         //getParentnode();
+         function creatNode() {
+             var body = document.body;//创建元素结点
+             var input = document.createElement("input");
+             input.type = "button";
+             input.value="按钮";
+             body.appendChild(input);
+         }
+        // creatNode();
+
+     </script>
+     -->
+    <!--<script>
+        var a='hello world';
+        var b=a;
+        a='tow';
+        alert(b);
+    </script>-->
+    <!--<script>
+        var obj1=new Object();
+        obj1.name='hello world';
+        var obj2=obj1;
+        obj1.name='tow';
+        alert(obj2.name);
+    </script>-->
+    <!--<script>
+        function test() {
+            var arr=[];
+            for(var i=0;i<10;i++){
+                arr[i]=function () {
+                    console.log(i);
+                }
+            }
+            return arr;
+        }
+        var myArr = test();
+        for (var j=0;j<10;j++){
+            myArr[j]();
+        }
+    </script>
+    -->
+     <div class="div" onmouseout="onout(this)"onmousemove="onover(this)"></div>
+     <script>
+         function onover(ooj) {
+             ooj.innerHTML = "Hello";
+         }
+         function onout(oo) {
+             oo.innerHTML = "world";
+         }
+     </script>
+     <form>
+         <input type="text" onchange="a(this)">
+         <input type="text"onselect="b(this)" onfocus="b1(this)">
+     </form>
+     <script>
+         function a(bg) {
+             alert("hello nihao");
+         }
+         function b(ag) {
+             ag.style.background="red";
+         }
+         function b1(ag) {
+             ag.style.background="green";
+         }
+         function ms() {
+             alert("网页加载完毕");
+         }
+     </script>
+
+   <!--
+    <button id="bid">按钮</button>
+    <script>
+        var x = document.getElementById("bid");
+        x = addEventListener("click",de);//句柄
+        x = addEventListener("click",ee);//第一个为类型，第二个是名字
+        x = removeEventListener("click",de);
+        function de() {
+            alert("hello");
+        }
+        function ee() {
+            alert("world");
+        }
+    </script>
+    -->
+</body>
+</html>
