@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="222.css">
+    <style>
+        #s1{background-color: black;width: 100px;height: 100px;}
+        #s1.hover {background-color: cyan; width: 100px; height: 100px;}
+    </style>
+</head>
+<body id="s">
+     <!--
+      控制Div属性
+     <input type="button" value="变宽" onclick="setStyle('width','350px')">
+     <input type="button" value="变高" onclick="setStyle('height','400px')">
+     <input type="button" value="变蓝" onclick="setStyle('background','cyan')">
+     <input type="button" value="隐藏" onclick="setStyle('display','none')">
+     <input type="button" value="重置" onclick="document.getElementById('div1').style.cssText=null">
+     <div id="div1"></div>
+     <script>
+         function setStyle(name,value){
+             var oDiv=document.getElementById('div1');
+             oDiv.style[name]=value;
+         }
+     </script>
+     -->
+     <!--
+     背景换肤
+     <button onclick="change('red')">红色</button>
+     <button onclick="change('blue')">蓝色</button>
+     <button onclick="change('green')">绿色</button>
+     <script>
+         function change(str) {
+             var body = document.getElementById('s');
+             body.style.backgroundColor = str;
+         }
+     </script>
+     -->
+     <!--
+     传参数并弹出
+     <p>
+         <input type="text" value="省">
+     </p>
+     <p>
+         <input type="text" value="区">
+     </p>
+     <p>
+          <button>传参</button>
+     </p>
+     <script>
+         var myFn = function(a, b)
+         {
+             alert(a.value);
+             alert(b.value);
+         };
+         window.onload = function ()
+         {
+             var oInput = document.getElementsByTagName("input");
+             var oBtn = document.getElementsByTagName("button")[0];
+             oBtn.onclick = function()
+             {
+                 myFn(oInput[0],oInput[1])
+             }
+         };
+     </script>
+     -->
+     <div id="s1"></div>
+     <script>
+         var oDiv = document.getElementById('s1');
+         oDiv.onmouseover = function () {
+             oDiv.className = 'hover';
+         }
+         oDiv.onmouseout = function () {
+             oDiv.className = '';
+         }
+     </script>
+</body>
+</html>
