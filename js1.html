@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+      /*数组中添加元素
+      var a = Array("1","2","3");
+      var b = Array("2","3","4");
+      a.shift(0);
+      a.push(4);
+      b.pop(2);
+      b.unshift("1");
+      */
+      /*阶乘
+      var n = parseInt(window.prompt('input'));
+      var mul = 1;
+      for(var i = 0 ;i < n ; i ++){
+          mul *= 2;
+      }
+      document.write(mul);
+      */
+      /*累乘
+      var n = parseInt(window.prompt('input'));
+      var mul = 1;
+      for(var i = 1 ; i <= n ; i ++){
+          mul *= i;
+      }
+      document.write(mul);
+      */
+      /*
+      函数表达式
+      alert(sum(10,10));
+      var sum = function (num1,num2) {//函数表达式
+          return num1 + num2 ;
+      }
+      */
+      /*
+      函数声明
+      function sum(num1,num2) {
+          return num1 + num2 ;
+      }
+      alert(sum(10,2));
+      */
+      /*
+      使用arguments求和
+
+      function sum(){
+          var result = 0;
+          for(var i = 0 ; i < arguments.length ; i++){
+              result += arguments[i];
+          }
+          console.log(result);
+      }
+      sum(1,2,3,4,5,6,7,8,9);
+      */
+      /*
+      预编译(四部曲)
+      一.
+      function test(a,b) {
+          console.log(a);//1
+          c = 0;
+          var c;
+          a = 3;
+          b = 2;
+          console.log(b);//2
+          function b() {}
+          function d() {}
+          console.log(b);//2
+      }
+      test(1);//a=1
+      */
+      /*
+      类型转换
+
+      var str = false + 1;//0+1
+      console.log(str);//1
+      var demo = false == 1;//false
+      console.log(demo);//false
+      if(typeof (a) && -ture + (+undefined) + ""){//'undefined' && -1 + 'NaN' + null  => 'undefined'  'NaN' => 字符串成立
+          console.log('基础扎实');//可以输出
+      }
+      if (11 + "11" * 2 == 33){//11 + 22
+          console.log('基础扎实');//可以输出
+      }
+      !!" " + !!"" - !!false || console.log('不能打印'); //ture + false - false
+      */
+      /*
+      闭包
+      1.
+      function a() {
+          function b() {
+              var bbb = 234;
+              console.log(aaa);//123
+          }
+          var aaa = 123;
+          return b;//a执行完后销毁a的AO,但是b没有被销毁
+      }
+      var glob = 100;
+      var demo = a();//存的是b
+      demo();
+      */
+      /*
+      2.
+     function test(){
+          var arr = [];
+          for (var i =0; i < 10; i ++ ){//将var改成let,则输出0-9
+              arr[i] = function () {
+                  console.log(i + "");//输出10个10
+              }
+          }
+          return arr;
+     }
+     var myArr = test();
+      for (var j = 0; j < 10; j ++){
+          myArr[j]();
+      }
+      /*
+      立即执行函数
+
+      var num = (function (a,b) {
+          var d = a + b;
+          return d;
+      }(1,2));
+       */
+      /*
+      对象
+
+      function  Student(name,sex,age) {
+          //var this = {};隐式的
+          this.name = name;
+          this.age = age;
+          this.sex = sex;
+          this.grade = 2018;
+          //return this;隐式的
+      }
+      var student = new Student('keke','19','fmale');
+       */
+      /*
+      包装类
+      var str = "abcd";
+      str.length = 2;
+      console.log(str);//abcd
+      console.log(str.length);//4
+      */
+      /*
+      var num = 4;
+      num.length = 2;
+      console.log(num.length);//num没有length属性
+      */
+      /*
+      包装类和对象例题
+     function Person(name,age,sex) {
+         var a = 0;
+         this.name = name;
+         this.age = age;
+         this.sex = sex;
+         function sss() {
+             a ++;
+             console.log(a);
+         }
+         this.say = sss;
+     }
+     var oPerson = new Person();
+     oPerson.say();//1
+     oPerson.say();//2
+     var oPerson1 = new Person();
+     oPerson1.say();//1
+     */
+      /*
+      // Car.prototype.height = 1400; //公有属性
+      // Car.prototype.lang = 4900; //公有属性
+      // Car.prototype.carName = "BWM"; //公有属性
+      Car.prototype = {
+          height : 1400,
+          lang : 4900,
+          carName : "BWM"
+      }
+     function Car(color,owner) {
+         this.owner = owner;
+         this.color = color;
+     }
+     var car = new Car('blue','deng');
+     var car1 = new Car('red','li');
+     */
+
+      /*
+      原型
+      Person.prototype.name = 'sunny';
+      function Person() {
+
+      }
+      // 3. Person.prototype = {
+      //     name : 'cherry'
+      // }//person.name输出cherry,位置不同执行顺序不同，先进行的改变
+
+      var person = new Person();
+      //1.Person.prototype.name = 'cherry';//person.name输出cherry
+      //2. Person.prototype = {
+      //     name : 'cherry'
+      // }//person.name输出sunny
+     /* 第二种实现过程
+      Person.prototype = {name : 'a'};
+      __proto__ = Person.prototype;
+      Person.prototype = {name : 'b'};
+      */
+
+      /*
+     原型链
+
+      Person.prototype = {
+          name : 'a',
+          sayName : function () {
+              console.log(this.name);// 谁调用这个方法，this就指向谁
+              // person.sayName(); --> a,
+              //如果Person中有name，则person.sayName(); --> b,
+          }
+      }
+      function Person() {
+        //this.name = 'b';
+      }
+      var person = new Person();
+       */
+
+      /*
+      call实例
+
+      function Person(name, age, sex) {
+          this.name = name;
+          this.age = age;
+          this.sex = sex;
+      }
+      function Student (name, age, sex, tel, grade) {
+          //1 this.name = name;
+          // this.age = age;
+          // this.sex = sex;
+          Person.call(this, name, age, sex);//利用Person函数实现自己的目的，this表示的是Person中的
+          this.tel = tel;
+          this.grade = grade;
+      }
+      var student = new Student('sunny',14,'male',12434,2017);
+      */
+
+</script>
+</body>
+</html>
