@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+        /*数组例题
+        var a = Array("1","2","3");
+        var b = Array("2","3","4");
+        a.shift(0); //删除第一个数
+        console.log(a);//2,3
+        a.push(4);//向最后一位中添加
+        console.log(a);//2,3,4
+        b.pop();//剪切最后一位，传参没有意义
+        console.log(b);//2,3
+        b.unshift("1");//在最前面加
+        console.log(b);//1,2,3
+        arr.reserve();
+        */
+        /*
+        //自己实现push方法
+         var arr = [1,2,3];
+         Array.prototype.push = function () {
+             for(var i = 0; i < arguments.length; i ++){
+                 this[this.length] = arguments[i];
+             }
+             return this.length;
+         }
+         //splice
+        var arr1 = [1,2,3,4,5,6,7];
+        console.log(arr1.splice(1,3,8));//[2,3,4],从低一位开始，删除3个，添加8，打印出的是删除的数
+        console.log(arr1);//[1,8,5,6,7]
+
+        //sort 给数组排序，升序，降序在使用reserve方法
+        var arr2 = [1,3,5,-2,4,6];
+        console.log(arr2.sort());//[-2, 1, 3, 4, 5, 6]
+        //原理
+        arr.sort(function(a,b) { 
+            if(a > b){ //按照冒泡排序的思想，进行比较，此时实现的是升序
+                return 1; //返回值是正的，则调换位置
+            }else{
+                return -1; //返回值为负的，不调换位置
+            }
+            //return a-b;升序
+            //return b-a;降序
+        });
+        */
+        /*给一个数组让其乱序
+         var arr = [1, 2, 3, 4, 5, 6, 7];
+         arr.sort(function() {
+             return (Math.random() - 0.5);
+         })
+         */
+        /*随意按对象的任意一个属性排序
+        var obj = {
+            name: "cheng",
+            age: 18,
+            sex: "male",
+            face: "handsome"
+        }
+        var deng = {
+            name: "deng",
+            age: 20,
+            sex: undefined,
+            face: "amazing"
+        }
+        var zhang = {
+            name: "zheng",
+            age: 12,
+            sex: "female"
+        }
+        var arr = [obj, deng, zhang];
+        arr.sort(function(a, b) {
+            return a.age - b.age; //按年龄大小升序排序
+        });
+        */
+       /*join,split互逆
+        var arr = [1,2,3,4,5,6];
+        arr.join("-");//将数组用-连接起来"1-2-3-4-5-6"
+        arr.split("-");//按-将其拆分 ["1","2",.....]
+        */
+       /*类数组
+        var obj = {
+          "2" : "a",
+          "3" : "b",
+          "length" : 2,
+          "push" : Array.prototype.push,
+          "splice" : Array.prototype.splice
+        } 
+        obj.push('c'); //"2":"c"
+        obj.push('d');//"3":"d"
+        console.log(obj);
+        */
+        /*删除
+       (function (x){
+           delete(x);
+           return x; //1,因为删不了x，不是属性
+         })(1);
+         */
+        /*
+         try {
+                console.log('a');
+                console.log(b);//之后的代码都不执行
+                console.log('c');//不执行
+            } catch (e) {
+                console.log(e.name + ":" + e.message);//当try中有错误代码时，执行这条语句
+
+            }
+            console.log('d');//会执行
+            */
+    </script>
+</body>
+</html>
